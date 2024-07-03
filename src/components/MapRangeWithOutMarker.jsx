@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Map, MapMarker } from "react-kakao-maps-sdk";
+import { Circle, Map, MapMarker } from "react-kakao-maps-sdk";
+import { useSelector } from "react-redux";
 
 function MapRangeWithOutMarker() {
   const lat = 37.544575;
   const lng = 126.951136;
+  const { radius } = useSelector((state) => state.Count);
   const [shopList, setShopList] = useState([]);
 
   useEffect(() => {
@@ -48,6 +50,19 @@ function MapRangeWithOutMarker() {
           title={position.name} // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
         ></MapMarker>
       ))}
+      <Circle
+        center={{
+          lat: lat,
+          lng: lng,
+        }}
+        radius={radius * 40}
+        strokeWeight={5} // 선의 두께입니다
+        strokeColor={"#75B8FA"} // 선의 색깔입니다
+        strokeOpacity={2} // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle={"solid"} // 선의 스타일 입니다
+        fillColor={"#CFE7FF"} // 채우기 색깔입니다
+        fillOpacity={0.7} // 채우기 불투명도 입니다
+      />
     </Map>
   );
 }
