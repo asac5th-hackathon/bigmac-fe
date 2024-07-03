@@ -1,5 +1,5 @@
 import Providers from "@/redux/Providers";
-import "./global.css";
+import "@/app/globals.css";
 
 export default function RootLayout({ children }) {
   return (
@@ -9,12 +9,6 @@ export default function RootLayout({ children }) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>BIGMAC-PROJECT</title>
-        <link
-          rel="shortcut icon"
-          sizes="76x76"
-          type="image/x-icon"
-          href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico"
-        />
         <meta name="description" content="Web site created..." />
       </head>
       <body>
