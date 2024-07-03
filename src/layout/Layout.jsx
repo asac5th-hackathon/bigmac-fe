@@ -11,6 +11,7 @@ function Layout({ children }) {
   const routeTitles = {
     "/": "주소 검색",
     "/Radius": "반경 설정",
+    "/main": "카테고리 설정",
   };
 
   const pathname = usePathname();

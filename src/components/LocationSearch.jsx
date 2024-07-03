@@ -1,6 +1,7 @@
 import { React } from "react";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import Link from "next/link";
 
 function LocationSearch() {
   return (
@@ -19,29 +20,30 @@ function LocationSearch() {
           <button className="w-full text-xs py-2 my-2 rounded-md border border-gray-400">
             현재 위치로 찾기
           </button>
-
-          <div className="grid grid-cols-[10%_80%_10%] justify-items-stretch my-4">
-            <Image
-              src={"/images/SelectedLocation.svg"}
-              width={24}
-              height={24}
-              alt="selectedLocation"
-              className="py-2"
-            />
-            <div className="flex flex-col ">
-              <div className="font-bold">서울 마포구 마포대로 122</div>
-              <div className="text-xs">
-                서울 마포구 마포대로 122 프론트원 4층
+          <Link href="Radius">
+            <div className="grid grid-cols-[10%_80%_10%] justify-items-stretch my-4">
+              <Image
+                src={"/images/SelectedLocation.svg"}
+                width={24}
+                height={24}
+                alt="selectedLocation"
+                className="py-2"
+              />
+              <div className="flex flex-col ">
+                <div className="font-bold">서울 마포구 마포대로 122</div>
+                <div className="text-xs">
+                  서울 마포구 마포대로 122 프론트원 4층
+                </div>
               </div>
+              <Image
+                src={"/images/Checked.svg"}
+                width={24}
+                height={24}
+                alt="Checked"
+                className="flex py-2"
+              />
             </div>
-            <Image
-              src={"/images/Checked.svg"}
-              width={24}
-              height={24}
-              alt="Checked"
-              className="flex py-2"
-            />
-          </div>
+          </Link>
         </div>
       </div>
     </>

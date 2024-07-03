@@ -10,3 +10,12 @@
   border: solid 1px rgb(37, 99, 235);
   border-radius: 10px;
 }
+
+.Button_ADD {
+  background-color: rgb(37, 99, 235);
+  color: white;
+  width: 40%;
+  height: 50px;
+  border: solid 1px rgb(37, 99, 235);
+  border-radius: 10px;
+}

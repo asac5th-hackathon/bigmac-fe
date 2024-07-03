@@ -1,6 +1,7 @@
 import { Slider } from "@/components/ui/slider";
 import Button from "./Button";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
+import Link from "next/link";
 
 function RadiusContent() {
   return (
@@ -27,7 +28,9 @@ function RadiusContent() {
           <Slider defaultValue={[33]} max={100} step={1} />
           <span className="font-semibold">모든지역</span>
         </div>
-        <Button text={"저장하기"} type={"BOTTOM"}></Button>
+        <Link href="main">
+          <Button text={"저장하기"} type={"BOTTOM"}></Button>
+        </Link>
       </div>
     </>
   );
