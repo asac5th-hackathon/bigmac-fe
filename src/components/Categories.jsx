@@ -56,10 +56,10 @@ const categories = [
 ];
 
 const productData = {
-  전체: [
-    { name: "제품 1", price: "1000 원" },
-    { name: "제품 2", price: "2000 원" },
-    { name: "제품 3", price: "3000 원" },
+  담배: [
+    { name: "켄트", price: "4500 원" },
+    { name: "라일락", price: "4500 원" },
+    { name: "한라산", price: "4500 원" },
   ],
   과일: [
     { name: "사과", price: "1,000 원" },

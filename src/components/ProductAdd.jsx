@@ -11,12 +11,7 @@ function ProductAdd({ selectedCategory }) {
   return (
     <>
       <div className="w-full bg-gray-400 grid grid-cols-2 h-[200px] content-center justify-items-center my-4 ">
-        <Image
-          src={"/images/defaultprofile.svg"}
-          alt="임시"
-          width={120}
-          height={120}
-        />
+        <Image src={"/images/money.svg"} alt="임시" width={120} height={120} />
 
         <div className="flex flex-col gap-2">
           <>
