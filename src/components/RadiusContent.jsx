@@ -1,11 +1,21 @@
+"use client";
 import { Slider } from "@/components/ui/slider";
 import Button from "./Button";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import Link from "next/link";
-import MapRange from "./MapRange";
-import MapRangeWithOutMarker from "@/components/MapRangeWithOutMarker";
+import { useDispatch, useSelector } from "react-redux";
+import { setRadius } from "@/redux/slices/CountSlice";
+import MapRangeWithOutMarker from "./MapRangeWithOutMarker";
 
 function RadiusContent() {
+  const dispatch = useDispatch();
+  const { radius } = useSelector((state) => state.Count);
+
+  const handleChange = (value) => {
+    console.log("value : " + value);
+    dispatch(setRadius(value));
+  };
+
   return (
     <>
       <MapRangeWithOutMarker />
@@ -17,12 +27,18 @@ function RadiusContent() {
       <div className="py-8">
         <div className="flex flex-col justify-center items-center gap-1 my-4">
           <div className="text-xl">반경</div>
-          <div className="text-3xl font-semibold">5km</div>
+          <div className="text-3xl font-semibold">{radius}km</div>
         </div>
 
         <div className="flex justify-center items-center gap-4 whitespace-nowrap py-8">
-          <span className="font-semibold">100m</span>
-          <Slider defaultValue={[33]} max={100} step={1} />
+          <span className="font-semibold">1km</span>
+          <Slider
+            value={[radius]}
+            onValueChange={handleChange}
+            defaultValue={[0]}
+            max={5}
+            step={1}
+          />
           <span className="font-semibold">모든지역</span>
         </div>
         <Link href="main">
