@@ -1,4 +1,4 @@
-const Headername = ({ title, leftChild, rightChild }) => {
+const HeaderName = ({ title, leftChild, rightChild }) => {
   return (
     <header className="flex items-center py-5">
       <div className="w-[25%] justify-start">{leftChild}</div>
@@ -10,4 +10,4 @@ const Headername = ({ title, leftChild, rightChild }) => {
   );
 };
 
-export default Headername;
+export default HeaderName;

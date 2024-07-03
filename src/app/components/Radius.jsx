@@ -1,5 +1,6 @@
 import { Slider } from "@/components/ui/slider";
 import Button from "./Button";
+import Link from "next/link";
 
 const Radius = () => {
   return (
@@ -20,8 +21,9 @@ const Radius = () => {
           <Slider defaultValue={[33]} max={100} step={1} />
           <span className="font-semibold">모든지역</span>
         </div>
-
-        <Button text={"저장하기"} type={"BOTTOM"}></Button>
+        <Link>
+          <Button text={"저장하기"} type={"BOTTOM"}></Button>
+        </Link>
       </div>
     </>
   );
