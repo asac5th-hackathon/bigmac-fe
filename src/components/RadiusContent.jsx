@@ -2,16 +2,13 @@ import { Slider } from "@/components/ui/slider";
 import Button from "./Button";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import Link from "next/link";
+import MapRange from "./MapRange";
+import MapRangeWithOutMarker from "@/components/MapRangeWithOutMarker";
 
 function RadiusContent() {
   return (
     <>
-      <Map
-        center={{ lat: 33.5563, lng: 126.79581 }}
-        style={{ width: "100%", height: "450px" }}
-      >
-        <MapMarker position={{ lat: 33.55635, lng: 126.795841 }}></MapMarker>
-      </Map>
+      <MapRangeWithOutMarker />
       <div className="flex flex-col justify-center items-center gap-1 bg-black/50">
         <div className="font-extrabold">서울 마포구 마포대로 122</div>
         <div>서울 마포구 마포대로 122 프론트원 4층</div>

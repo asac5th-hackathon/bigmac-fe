@@ -1,8 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import Button from "./Button";
+import { categories } from "./Categories";
+import { productData } from "./Categories";
 
-function ProductAdd() {
+function ProductAdd({ selectedCategory }) {
+  const filterProduct = selectedCategory
+    ? productData[categories.find((cat) => cat.id === selectedCategory).title]
+    : [];
   return (
     <>
       <div className="w-full bg-gray-400 grid grid-cols-2 h-[200px] content-center justify-items-center my-4 ">
@@ -14,10 +19,22 @@ function ProductAdd() {
         />
 
         <div className="flex flex-col gap-2">
-          <span>데이터 들어올곳</span>
-          <span>데이터 들어올곳</span>
-          <span>데이터 들어올곳</span>
-          <span>데이터 들어올곳</span>
+          <>
+            <div className="mt-4">
+              <h3 className="text-lg font-bold mb-2">
+                {categories.find((cat) => cat.id === selectedCategory).title}
+              </h3>
+            </div>
+            <div className="flex flex-col gap-2">
+              {filterProduct.map((product, index) => (
+                <div key={index}>
+                  <h2>
+                    {product.name} : {product.price}
+                  </h2>
+                </div>
+              ))}
+            </div>
+          </>
         </div>
       </div>
       <div className="flex justify-around text-2xl">
